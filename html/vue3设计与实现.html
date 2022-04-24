@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>vue3设计与实现</title>
+</head>
+<body>
+    
+    
+    <script>
+    
+        const data = {
+            age: 22
+        }
+        
+        
+        const proxy = new Proxy(data, {
+            get(target, p, receiver) {
+                console.log(target)
+                console.log(p)
+                console.log(receiver)
+            
+            },
+            set(target, p, value, receiver) {
+                console.log(target)
+                console.log(p)
+                console.log(value)
+                console.log(receiver)
+            
+            }
+        })
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
