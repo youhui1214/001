@@ -9,6 +9,74 @@
 
   <script>
 
+    // 1，原型链继承
+    function Point(name) {
+      this.name = name
+      this.aa = 'aa'
+      this.colors = ['red', 'blue']
+    }
+
+    function Person(age) {
+      this.age = age
+      this.bb = 'bb'
+    }
+    Person.prototype = new Point('point--')
+    const p1 = new Person(11)  // 缺点：不能给父类传参
+    const p2 = new Person(22)
+
+    // console.log(p1)
+    console.log(p1.colors)
+    p1.colors.push('yellow')
+    console.log(p1.colors)
+    console.log(p2.colors) // 缺点：引用类型值被公用
+    // console.log(p1.aa)
+
+    // 2，借用构造函数继承
+    function Book(title) {
+      this.title = title
+      this.str = 'book'
+
+      Point.apply(this, ['尤辉']) // 可以给父类传参
+    }
+
+    const bb1 = new Book('哈哈哈')
+    console.log(bb1)
+    console.log(bb1.name)
+    console.log(bb1.aa)
+    console.log(bb1.colors)
+    console.log(bb1.title)
+    bb1.colors.push('bbb')
+
+    console.log(p1.colors)
+    console.log(Point)
+
+    // 3，组合继承方法
+    function Team(job) {
+      this.job = job
+
+      // 继承属性
+      Point.apply(this, ['团队'])
+    }
+    Team.prototype = new Point() // 继承方法
+    Team.prototype.constructor = Team
+
+    const tt1 = new Team('soft--')
+    const tt2 = new Team('soft222--')
+
+    console.log(tt1)
+    console.log(tt1.colors)
+    console.log(tt1.name)
+    console.log(tt1.job)
+
+    tt1.colors.push('ttt')
+
+    console.log(tt1.colors)
+    console.log(tt2.colors)
+
+    // 4, 原型式继承，es6有新的方法---Object.create()
+    // 缺点：原型的问题，引用值共享
+
+
 
 
 
