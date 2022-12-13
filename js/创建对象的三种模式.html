@@ -48,6 +48,37 @@
     const pro1 = new PersonPro()
     const pro2 = new PersonPro()
 
+    console.log(pro1)
+
+
+    console.log(pro1.__proto__)
+
+    // 对象是有constructor属性，函数是有prototype
+
+    console.log(pro1.prototype)
+    // 原型链
+    console.log(pro1.constructor)
+    console.log(pro1.constructor.prototype)
+    console.log(pro1.constructor.prototype.constructor)
+    console.log(pro1.constructor.prototype.constructor.prototype)
+    console.log(pro1.constructor.prototype.constructor.prototype.constructor)
+    console.log(pro1.constructor.prototype.constructor.prototype.constructor.prototype)
+
+    // 4，组合构造函数和原型模式
+
+    function PersonAll(name, age) {
+      this.name = name
+      this.age = age
+      this.arr = [12,13]
+    }
+    PersonAll.prototype.sayAll = function () {
+      console.log('all', this.name)
+    }
+
+    const aa1 = new PersonAll('all1', 333)
+    console.log(aa1)
+
+    aa1.sayAll()
 
 
   </script>
