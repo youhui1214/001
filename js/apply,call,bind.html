@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>绑定作用域</title>
+</head>
+<body>
+
+  <script>
+
+    // apply  call   bind  改变函数的作用域   this的指向
+
+    // apply 传参是数组，call 传参是多个， bind返回的是个函数
+
+    window.color = 'red'
+
+    var o = {color: 'blue'}
+
+    function sayColor() {
+      console.log(this.color)
+    }
+
+    // sayColor()
+    //
+    // sayColor.apply(o)
+    // sayColor.call(o)
+    const aa = sayColor.bind(o)
+    aa()
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
