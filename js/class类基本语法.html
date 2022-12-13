@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>class类的基本语法</title>
+</head>
+<body>
+
+  <script>
+    // 旧的写法
+    function PointOld(x, y) {
+      this.x = x
+      this.y = y
+    }
+    PointOld.prototype.sayAll=function () {
+      console.log('string'+this.x)
+    }
+    const po = new PointOld(1,2)
+    po.sayAll()
+
+    // class
+    class Point {
+      constructor(x,y) {
+        this.x = x
+        this.y = y
+      }
+      sayAll(){
+        console.log('class'+this.x)
+      }
+    }
+
+    console.log(Point.constructor)
+
+    const p1 = new Point(12,222)
+    p1.sayAll()
+
+    console.log(p1)
+    console.log(p1.constructor)
+    console.log(p1.constructor.prototype)
+    console.log(p1.constructor.prototype.constructor)
+
+
+
+
+
+  </script>
+</body>
+</html>
