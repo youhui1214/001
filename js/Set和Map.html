@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Set和Map</title>
+</head>
+<body>
+
+  <script>
+
+    // 1,set数组去重
+    const arr = [1, 2, 3, 4, 2, 1]
+    const aa = new Set(arr)
+    // console.log(aa)
+
+    // set 基本方法
+
+    const bb = new Set()
+
+    bb.add(1).add(2).add(2)
+    // console.log(bb)
+    // console.log(bb.has(2))
+
+
+    // 2,Map
+    const mp = new Map()
+    console.log(mp)
+    mp.set('aa', 'aa')
+    console.log(mp)
+    mp.set(2, "ee")
+    console.log(mp)
+    console.log(mp.has(2))
+    console.log(mp.has('ee'))
+
+    mp.set(11)
+    console.log(mp)
+
+    const mp2 = new Map()
+    let num = 0
+    let arr22 = []
+    for (const i of arr) {
+      if (mp2.has(i)){
+        console.log(100)
+        num++
+        arr22.push(i)
+      } else {
+        mp2.set(i, 'yh')
+      }
+    }
+    console.log(mp2)
+    console.log(num)
+    console.log(arr22)
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
