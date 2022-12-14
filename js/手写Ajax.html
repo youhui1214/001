@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>手写Ajax</title>
+</head>
+<body>
+
+  <script>
+
+    function getJson(url) {
+      let xhr = new XMLHttpRequest()
+      xhr.open('GET',url)
+      xhr.onreadystatechange = ()=>{
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            console.log(xhr.response)
+          } else {
+            console.log('err')
+          }
+        }
+      }
+      xhr.send()
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
