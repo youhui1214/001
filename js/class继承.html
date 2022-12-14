@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>class继承</title>
+</head>
+<body>
+
+  <script>
+
+    class Point {
+      constructor(name, age) {
+        this.name = name
+        this.age = age
+      }
+      sayName () {
+        console.log(this.name)
+      }
+    }
+
+    class Book extends Point {
+      constructor(x, y) {
+        super('huhu', 33);
+        this.header = 'book'
+        this.x = x
+        this.y = y
+      }
+      sayHeader () {
+        console.log(this.header)
+      }
+    }
+
+    const bb1 = new Book(22,33)
+
+    console.log(bb1)
+    console.log(bb1.header)
+    bb1.sayHeader()
+    console.log(bb1.name)
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
