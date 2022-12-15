@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>栈-数组实现</title>
+</head>
+<body>
+
+  <script>
+
+    // 栈--后进先出
+    class Stack {
+      constructor() {
+        this.items = []
+      }
+      push(element) {
+        this.items.push(element)
+      }
+      pop() {
+        return this.items.pop()
+      }
+      peek(){
+        return this.items[this.items.length-1]
+      }
+      clear () {
+        this.items = []
+      }
+      isEmpty() {
+        return this.items.length === 0
+      }
+      size() {
+        return this.items.length
+      }
+    }
+
+
+    const ss1 = new Stack()
+    console.log(ss1)
+    console.log(ss1.items)
+    ss1.push('huhu1')
+    ss1.push('huhu2')
+    ss1.push('huhu3')
+    ss1.push('huhu4')
+    console.log(ss1.items)
+    console.log(ss1.pop())
+    console.log(ss1.items)
+    console.log(ss1.peek())
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

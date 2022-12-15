@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>队列-对象实现</title>
+</head>
+<body>
+
+  <script>
+
+    // 队列--先进先出
+    class Queue {
+      constructor() {
+        this.count = 0
+        this.lowestCount = 0
+        this.items = {}
+      }
+      enqueue(element) {
+        this.items[this.count] = element
+        this.count++
+      }
+      dequeue() {
+        if (this.isEmpty()) return
+        const result = this.items[this.lowestCount]
+        delete this.items[this.lowestCount]
+        this.lowestCount++
+        return result
+      }
+      peek() {
+        if (this.isEmpty()) return
+        return this.items[this.lowestCount]
+      }
+      size() {
+        return this.count - this.lowestCount
+      }
+      isEmpty() {
+        return this.size() === 0
+      }
+      clear() {
+        this.count = 0
+        this.lowestCount = 0
+        this.items = {}
+      }
+    }
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
