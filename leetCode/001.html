@@ -8,24 +8,29 @@
 <body>
 
   <script>
+    const numsArr = [2,7,11,15], targetNum = 9
+    var twoSum = function(nums, target) {
+      // 过滤
+      let tempArr = nums.filter((item)=> item <= target)
+      console.log(tempArr)
 
-    const containsDuplicate = (nums) => {
-      let map = new Map()
-      for (let i of nums) {
-        if (map.has(i)) {
-          return false
-        } else {
-          map.set(i, 1)
-          console.log(map)
+      let tep = []
+
+      tempArr.forEach((item, index)=>{
+        let aa = target-item
+        console.log(aa)
+        for (let i = 0; i < numsArr.length; i++) {
+          console.log(numsArr[i])
+          if (numsArr[i] === aa) {
+            tep = [index, i]
+          }
         }
-      }
-    }
+      })
+      return tep
+    };
+    const qq = twoSum(numsArr, targetNum)
 
-    const arr = [1,2,3,1]
-
-    containsDuplicate(arr)
-
-
+    console.log(qq)
 
   </script>
 </body>

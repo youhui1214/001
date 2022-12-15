@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>proxy</title>
+</head>
+<body>
+
+  <script>
+
+    const obj = new Proxy({}, {
+      get (target, propKey, receiver) {
+        console.log(`getting ${propKey}!`);
+        return Reflect.get(target, propKey, receiver);
+      },
+      set (target, propKey, value, receiver) {
+        console.log(`setting ${propKey}!`);
+        return Reflect.set(target, propKey, value, receiver);
+      }
+    })
+
+    obj.count = 1
+
+    ++obj.count
+
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
