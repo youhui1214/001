@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>001</title>
+</head>
+<body>
+
+  <script>
+
+    const obj = {
+      element: '001',
+      next: {
+        element: '002',
+        next: {
+          element: '003',
+          next: undefined
+        }
+      }
+    }
+
+    let current = obj
+
+    // 使用while方法，将current指向最后一位的node
+    while (current.next !== undefined) {
+      current = current.next
+      console.log(current)
+    }
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
