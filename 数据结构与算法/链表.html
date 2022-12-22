@@ -44,6 +44,35 @@
 
         this.count++
       }
+      //通过index找到node
+      getElementAt(index) {
+        if (index >= 0 && index <= this.count) {
+          let node = this.head
+          for (let i = 0; i < index && node !== undefined; i++) {
+            node = node.next
+          }
+          return node
+        }
+        return undefined
+      }
+      // 从特定位置移除元素
+      removeAt(index) {
+        let current = this.head
+        // 移除第一项
+        if (index === 0) {
+          this.head = current.next
+        } else {
+          const previous = this.getElementAt(index - 1)
+          current = previous.next
+          console.log(previous)
+          console.log(current)
+          previous.next = current.next
+        }
+        this.count--
+        return current.element
+      }
+      // 插入元素
+
     }
 
     const link01 = new LinkedList()
@@ -52,11 +81,17 @@
 
     link01.push('001')
     console.log(link01)
-
     link01.push('002')
     console.log(link01)
-
     link01.push('003')
+    console.log(link01)
+    link01.push('004')
+    link01.push('005')
+    console.log(link01)
+
+
+    const aa = link01.removeAt(3)
+    console.log(aa)
     console.log(link01)
 
 
