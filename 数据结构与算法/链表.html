@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>链表</title>
+</head>
+<body>
+
+  <script>
+
+    function defaultEquals(a, b) {
+      return a === b
+    }
+
+    class Node {
+      constructor(element) {
+        this.element = element
+        this.next = undefined
+      }
+    }
+
+
+    class LinkedList {
+      constructor(equalsFn = defaultEquals) {
+        this.count = 0
+        this.head = undefined
+        this.equalsFn = equalsFn
+      }
+
+      push(element) {
+        const node = new Node(element)
+        let current
+        if (this.head === undefined){
+          this.head = node
+        } else {
+          current = this.head
+          while (current.next !== undefined) {
+            current = current.next
+          }
+
+          current.next = node
+        }
+
+        this.count++
+      }
+    }
+
+    const link01 = new LinkedList()
+
+    console.log(link01)
+
+    link01.push('001')
+    console.log(link01)
+
+    link01.push('002')
+    console.log(link01)
+
+    link01.push('003')
+    console.log(link01)
+
+
+
+
+
+
+  </script>
+</body>
+</html>

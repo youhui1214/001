@@ -8,25 +8,21 @@
 <body>
 
   <script>
-    const numsArr = [2,7,11,15], targetNum = 9
+    const numsArr = [2,11,7,15], targetNum = 9
     var twoSum = function(nums, target) {
-      // 过滤
-      let tempArr = nums.filter((item)=> item <= target)
-      console.log(tempArr)
-
-      let tep = []
-
-      tempArr.forEach((item, index)=>{
-        let aa = target-item
-        console.log(aa)
-        for (let i = 0; i < numsArr.length; i++) {
-          console.log(numsArr[i])
-          if (numsArr[i] === aa) {
-            tep = [index, i]
-          }
+      const map = new Map()
+      for(let i = 0 ; i<nums.length ; i++) {
+        let complete = target - nums[i]
+        console.log(map)
+        console.log(complete)
+        if(map.has(complete)) {
+          console.log(map)
+          return [map.get(complete) , i]
+        } else {
+          map.set(nums[i] , i)
         }
-      })
-      return tep
+      }
+      return []
     };
     const qq = twoSum(numsArr, targetNum)
 
