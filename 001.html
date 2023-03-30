@@ -4,16 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>001</title>
+  <style>
+    .main {
+        width: 1000px;
+        height: 800px;
+        background-color: aquamarine;
+        margin: 0 auto;
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .one {
+        width: 200px;
+        height: 400px;
+        background-color: red;
+    }
+    .two {
+        width: 150px;
+        height: 100px;
+        background-color: blue;
+    }
+    .three {
+        width: 450px;
+        height: 250px;
+        background-color: chartreuse;
+    }
+    .four {
+        width: 200px;
+        height: 100px;
+        background-color: blueviolet;
+    }
+    .five {
+        width: 150px;
+        height: 300px;
+        background-color: coral;
+    }
+    .six {}
+
+
+
+  </style>
 </head>
 <body>
 
+  <div class="main">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+    <div class="five"></div>
+    <div class="six"></div>
+  </div>
 
   <script>
-    var b = 10;
-    (function b(){
-      b = 20;
-      console.log(b);
-    })();
+
+    const aa = 16/3
+
+    console.log(aa)
+
+    const bb = Math.floor(aa)
+    const cc = Math.ceil(aa)
+
+    console.log(bb)
+    console.log(cc)
+
+    const ww = [
+      { labid: 1, labname: 'youhui' },
+      { labid: 2, labname: 'youhui4' },
+      { labid: 3, labname: 'dddg' },
+      { labid: 4, labname: 'dddg' },
+      { labid: 5, labname: 'dddg' },
+      { labid: 6, labname: 'dddg' },
+      { labid: 7, labname: 'dddg' },
+      { labid: 8, labname: 'dddg' },
+      { labid: 9, labname: 'dddg' },
+      { labid: 10, labname: 'dddg' },
+      { labid: 11, labname: 'dddg' },
+    ]
+
+    const  tt = ww.slice(8, 15)
+
+    console.log(tt)
 
 
 
