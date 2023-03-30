@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>002</title>
+</head>
+<body>
+
+  <script>
+    const map = new Map()
+
+    function findKeyObjByGrid(x,y) {
+      let obj = undefined
+      map.forEach((value, key) => {
+        if(key.x === x && key.y === y) {
+          obj = key
+        }
+      })
+      return obj
+    }
+
+    map.set({x:2,y:2}, {type:2})
+    map.set({x:1,y:1}, {type:2})
+    console.log(map)
+    const key = findKeyObjByGrid(2,2)
+    console.log(key)
+    map.set(key, {type: 6})
+    console.log(map)
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
