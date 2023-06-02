@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>003</title>
+</head>
+<body>
+
+  <script>
+
+    const it = makeIterator(['a', 'b'])
+
+    console.log(it)
+
+    console.log(it.next())
+    console.log(it.next())
+    console.log(it.next())
+    console.log(it.next())
+    console.log(it.next())
+
+
+
+
+    /*function makeIterator(array) {
+      let nextIndex = 0
+      return {
+        next: function () {
+          return nextIndex < array.length ?
+              { value: array[nextIndex++], done: false } :
+              { value: undefined, done: true }
+        }
+      }
+    }*/
+
+
+    function makeIterator(iterable, next) {
+      const iter = iterable[Symbol.iterator]()
+      const retIter = {
+        [Symbol.iterator] () {
+          return retIter
+        },
+        next () {
+          return next(iter)
+        }
+      }
+      return retIter
+    }
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

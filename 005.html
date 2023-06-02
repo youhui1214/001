@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>005</title>
+</head>
+<body>
+
+  <script>
+
+    const aa = Math.floor(Math.random() * 0xffffff).toString(16)
+
+    const str16 = '64b67b8f1507fd93518b6d000bbe28fd'
+    const str17 = '868c6421cf32ac55285c3ea57883760f'
+    console.log(str16.length)
+
+
+    const arr = [
+      { id: '120', name: '55' },
+      { id: '121', name: '55' },
+      { id: 101, name: '55' },
+      { id: 101, name: '55' },
+    ]
+
+    const aaa = arr.find(item => item.id === '120')
+    console.log(aaa)
+
+    const aaa3 = arr.map(item=> {
+      if (item.id==='121') {
+        item.age = 99
+        item.strname = 'sjffesfs'
+      }
+      return item
+    })
+
+     console.log(aaa3)
+     console.log(arr)
+
+  </script>
+</body>
+</html>
